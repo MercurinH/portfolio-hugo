@@ -1,13 +1,14 @@
-import { Link } from 'react-scroll';  // Utilisé pour le scroll entre les sections
+import '../styles/components/Navbar.css'; // Importation des styles spécifiques à la navbar
 
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <ul>
-                <li><Link to="home" smooth={true} duration={500}>Accueil</Link></li>
-                <li><Link to="about" smooth={true} duration={500}>À propos</Link></li>
-                <li><Link to="projects" smooth={true} duration={500}>Projets</Link></li>
-                <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
+            <div className="logo">HM</div>
+            <ul className="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     );

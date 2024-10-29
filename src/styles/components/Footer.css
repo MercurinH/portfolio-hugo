@@ -1,0 +1,23 @@
+/* Styling du footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ffa500; /* Couleur orange pour les liens */
+    text-decoration: none;
+    margin: 0 15px; /* Espacement entre les liens */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffcc33; /* Couleur plus claire au survol */
+}

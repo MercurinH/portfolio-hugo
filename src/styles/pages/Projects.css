@@ -1,0 +1,42 @@
+/* Section des projets */
+.projects-section {
+    padding: 60px 20px;
+    background-color: #333333;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+/* Conteneur des projets */
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: space-between; /* Pour distribuer l'espace entre les cartes */
+}
+
+/* Limite à 3 cartes par ligne */
+@media (min-width: 1200px) {
+    .projects-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 2 cartes par ligne sur les écrans moyens */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .projects-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 1 carte par ligne sur les petits écrans */
+@media (max-width: 767px) {
+    .projects-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

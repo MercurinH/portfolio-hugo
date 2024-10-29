@@ -1,0 +1,42 @@
+/* Carte de projet */
+.project-card {
+    background-color: #2e2e2e; /* Fond sombre pour les cartes */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner du relief */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Effet hover pour déplacer la carte vers le haut */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Accentuer l'ombre au hover */
+}
+
+/* Titre du projet */
+.project-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color); /* Couleur primaire pour les titres */
+    margin-bottom: 10px;
+}
+
+/* Description du projet */
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texte en blanc */
+}
+
+/* Lien pour voir le projet */
+.project-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color); /* Couleur secondaire pour les boutons */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card a:hover {
+    background-color: var(--primary-color); /* Changement de couleur au hover */
+}

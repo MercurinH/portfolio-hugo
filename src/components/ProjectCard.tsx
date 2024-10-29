@@ -1,3 +1,5 @@
+import '../styles/components/ProjectCard.css';
+
 interface ProjectCardProps {
     title: string;
     description: string;

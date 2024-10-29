@@ -1,4 +1,8 @@
 import React, { useState } from 'react'; // Import de useState pour gérer l'état local
+import emailjs from 'emailjs-com'; // Import de la bibliothèque emailjs pour envoyer des emails
+import Button from '../components/Button'; // Import du composant Button
+import '../styles/pages/Contact.css'; // Import du fichier de styles CSS
+
 
 const Contact = () => {
     // Définition de l'état local pour stocker les valeurs du formulaire
@@ -7,6 +11,8 @@ const Contact = () => {
         email: '',     // Email de l'utilisateur
         message: '',   // Message de l'utilisateur
     });
+
+    const [isSending, setIsSending] = useState(false); // État pour gérer l'envoi du formulaire
 
     // Fonction pour gérer les changements dans les champs du formulaire
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -17,9 +23,35 @@ const Contact = () => {
     // Fonction appelée lorsque le formulaire est soumis
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault(); // Empêche le rechargement de la page lors de la soumission du formulaire
-        console.log('Form Data:', formData); // Affiche les données du formulaire dans la console (à remplacer par l'envoi d'email)
+        setIsSending(true); // Changement de l'état pour indiquer l'envoi du formulaire
 
-        // add du code pour envoyer les données via une API ou EmailJS
+        // Vérifiez que tous les champs requis sont remplis
+        if (formData.name === '' || formData.email === '' || formData.message === '') {
+            alert("Veuillez remplir tous les champs.");
+            return; // Ne pas envoyer si un champ est vide
+        }
+
+        // Envoi des données via EmailJS
+        const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const userID = import.meta.env.VITE_EMAILJS_USER_ID;
+
+        // Envoi des données du formulaire via EmailJS
+        emailjs.send(serviceID, templateID, {
+            from_name: formData.name,
+            reply_to: formData.email,
+            message: formData.message,
+        }, userID)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Votre message a été envoyé avec succès !');
+                setFormData({ name: '', email: '', message: '' }); // Réinitialisation des champs du formulaire
+                setIsSending(false); // Réinitialisation de l'état de l'envoi
+            }, (err) => {
+                console.log('FAILED...', err);
+                alert('Échec de l\'envoi du message. Veuillez réessayer.');
+                setIsSending(false); // Réinitialisation de l'état de l'envoi
+            });
     };
 
     return (
@@ -32,11 +64,11 @@ const Contact = () => {
                 <form onSubmit={handleSubmit}>
                     {/* Champ pour le nom de l'utilisateur */}
                     <div className="form-group">
-                        <label htmlFor="name">Nom</label>
                         <input
                             type="text"
                             id="name"
                             name="name" // L'attribut name correspond à la clé dans formData
+                            placeholder={"Nom*"} // Placeholder pour le nom
                             value={formData.name} // Liaison entre l'état formData et le champ input
                             onChange={handleChange} // Déclenchement de handleChange quand le name change
                             required // Champ obligatoire
@@ -45,11 +77,11 @@ const Contact = () => {
 
                     {/* Champ pour l'email de l'utilisateur */}
                     <div className="form-group">
-                        <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             id="email"
                             name="email" // Liaison avec l'état pour l'email
+                            placeholder={"Email*"} // Placeholder pour l'email
                             value={formData.email} // Valeur actuelle de l'email dans l'état
                             onChange={handleChange} // Appel à handleChange quand l'email change
                             required // Email obligatoire
@@ -58,10 +90,10 @@ const Contact = () => {
 
                     {/* Champ pour le message de l'utilisateur */}
                     <div className="form-group">
-                        <label htmlFor="message">Message</label>
                         <textarea
                             id="message"
                             name="message" // Liaison avec l'état pour le message
+                            placeholder={"Message"} // Placeholder pour le message
                             value={formData.message} // Valeur actuelle du message
                             onChange={handleChange} // Mise à jour du message
                             required // Champ obligatoire
@@ -69,19 +101,15 @@ const Contact = () => {
                     </div>
 
                     {/* Bouton pour envoyer le formulaire */}
-                    <button type="submit">Envoyer</button>
+                    <Button variant="primary" disabled={isSending || !formData.name || !formData.email || !formData.message}>
+                        {isSending ? "Envoi en cours..." : "Envoyer"}
+                    </Button>
                 </form>
 
                 {/* Informations de contact direct */}
                 <div className="contact-info">
                     <p>Ou contactez-moi directement par email :</p>
-                    <a href="mailto:email@example.com">email@example.com</a>
-                </div>
-
-                {/* Liens vers les réseaux sociaux */}
-                <div className="social-links">
-                    <a href="https://github.com/profil" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://www.linkedin.com/in/profil" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:mercurinh.contact@gmail.com">mercurinh.contact@gmail.com</a>
                 </div>
             </div>
         </section>

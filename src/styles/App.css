@@ -1,6 +1,95 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Conteneur global */
+.container {
+    width: 85%;
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    max-width: 1200px; /* Limite la largeur pour un look plus structuré */
 }
+
+/* Alignement des sections */
+.section {
+    padding: 60px 0;
+    text-align: center; /* Centre le contenu de chaque section */
+}
+
+/* Espacement entre les titres et le contenu */
+.section-title {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+
+/* Flexbox layout */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* Flexbox pour la gestion des sections */
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Grille flexible pour les projets */
+.grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Espace entre les éléments */
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur petits écrans */
+}
+
+.grid-item {
+    background-color: var(--background-color);
+    padding: 20px;
+    width: calc(33.333% - 40px); /* Prend 1/3 de la largeur avec une marge */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .grid-item {
+        width: 100%;
+    }
+}
+
+/* Marges spécifiques pour la mise en page */
+.margin-top {
+    margin-top: 50px;
+}
+
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+.padding-top {
+    padding-top: 50px;
+}
+
+.padding-bottom {
+    padding-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Réduit la largeur du conteneur sur mobile */
+    }
+
+    h1 {
+        font-size: 2rem; /* Ajuste la taille des titres pour les petits écrans */
+    }
+
+    .grid-item {
+        width: 100%; /* Les cartes s'empilent en colonne sur mobile */
+    }
+
+    .button {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+    }
+}
+

@@ -1,4 +1,4 @@
-import '../styles/About.css';
+import '../styles/pages/About.css';
 
 const About = () => {
     return (
@@ -11,7 +11,7 @@ const About = () => {
                     développement, ce qui m'a offert une belle diversité d'expériences.</p>
 
                 <p>Au fil de mes expériences, j'ai acquis des compétences solides en développement front-end et
-                    back-end, notamment avec Java, JavaScript, React, Angular et Spring Boot. J'ai travaillé sur des
+                    back-end, notamment avec Java, JavaScript, React, Angular et Spring. J'ai travaillé sur des
                     projets complexes dans les secteurs de la mutuelle, de l'assurance et de la retraite, où j'ai mené
                     des développements d'API, l'intégration de services, ainsi que la gestion d'anomalies et la
                     maintenance évolutive des systèmes.</p>
@@ -23,11 +23,12 @@ const About = () => {
                 <p>Voici un aperçu des technologies et outils que j'utilise régulièrement :</p>
                 <ul>
                     <li><strong>Front-end</strong> : React, Angular, JavaScript, TypeScript</li>
-                    <li><strong>Back-end</strong> : Java, Spring Boot, API REST, Spring Batch</li>
+                    <li><strong>Back-end</strong> : Java, Spring, API REST/SOAP</li>
                     <li><strong>Bases de données</strong> : SQL, MarkLogic, MongoDB, PostgreSQL</li>
                     <li><strong>Outils</strong> : Docker, Git, Maven, CI/CD</li>
                 </ul>
 
+                <br/>
                 <p>En dehors du développement, je m'intéresse beaucoup aux nouvelles technologies, que je suis à travers
                     une veille régulière. Je consacre aussi du temps à mes autres passions, notamment le sport, la
                     musique et l'art sous toutes ses formes.</p>

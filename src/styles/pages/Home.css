@@ -1,0 +1,129 @@
+.home-section {
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    display: flex;
+    align-items: center; /* Centre verticalement le contenu */
+    justify-content: center; /* Centre horizontalement */
+    background-color: var(--background-color); /* Utilise la couleur de fond définie dans index.css */
+    color: var(--text-color); /* Couleur du texte */
+    padding: 0 20px; /* Ajoute une marge intérieure pour éviter que le contenu touche les bords */
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-buttons .button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    margin-right: 10px; /* ou une autre valeur selon l'espacement souhaité */
+}
+
+button:last-child {
+    margin-right: 0; /* Cela enlève la marge du dernier bouton */
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .home-buttons {
+        flex-direction: column; /* Les boutons s'empilent en colonne sur mobile */
+        gap: 10px;
+    }
+
+    .home-buttons .button {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .home-buttons {
+        flex-direction: column; /* Les boutons s'empilent en colonne sur mobile */
+        gap: 10px;
+    }
+
+    .home-buttons .button {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+    }
+}
+
+@keyframes subtleFade {
+    0% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+}
+
+.home-title-container {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    animation: subtleFade 6s ease infinite; /* Animation subtile ici */
+    position: relative;
+    z-index: 1;
+}
+
+.home-title-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%); /* Modify this to adjust the position */
+    width: 120%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 165, 0, 0.5), rgba(255, 165, 0, 0) 70%);
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.7;
+}
+
+
