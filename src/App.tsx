@@ -1,5 +1,3 @@
-//import Navbar from './components/Navbar';  // Barre de navigation
-//import Footer from './components/Footer';  // Pied de page
 import Home from './pages/Home';
 import About from "./pages/About.tsx";
 import Projects from './pages/Projects';
