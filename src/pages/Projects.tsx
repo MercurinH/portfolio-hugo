@@ -15,6 +15,7 @@ const Projects = () => {
             title: 'Mercurin Solutions',
             description: 'Développement web, mobile, et logiciel. Services de consulting pour des solutions digitales sur mesure.',
             technologies: ['React', 'Java', 'Spring Boot', 'Outils de développement web et mobile'],
+            link: ''
         },
         {
             title: 'Synapzse',
