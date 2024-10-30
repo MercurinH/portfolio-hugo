@@ -23,6 +23,9 @@ Ce portfolio a été développé avec les technologies suivantes :
 - **Cartes de projets** : Présente chaque projet avec les technologies utilisées et un lien vers le code source ou la démonstration.
 - **Responsive** : Le site est optimisé pour une utilisation sur mobile et desktop
 
+## 🌱 Mises à jour
+Le portfolio évolue avec le temps ! J’ajouterai régulièrement de nouvelles fonctionnalités et projets pour garder le site à jour avec mes dernières compétences et expériences. N'hésitez pas à revenir pour voir les nouveautés.
+
 ## ⚙️ Installation
 
 Suivez ces étapes pour installer et exécuter le projet localement :
