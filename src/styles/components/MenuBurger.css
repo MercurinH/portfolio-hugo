@@ -1,0 +1,22 @@
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon.open .line {
+    background-color: var(--secondary-color);
+}
+
+.menu-icon .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+}

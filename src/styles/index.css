@@ -7,11 +7,11 @@
 
 /* Variables globales */
 :root {
-  --primary-color: #F8A912; /* Un orange/jaune pour les boutons et liens */
-  --secondary-color: #FFB74D; /* Variante plus claire pour les hover ou autres effets */
-  --background-color: #1c1c1c; /* Fond gris foncé/noir */
-  --text-color: #f0f0f0; /* Texte en blanc */
-  --accent-color: #E6E6E6; /* Couleur des sous-titres ou du texte plus subtil */
+  --primary-color: #F8A912;
+  --secondary-color: #FFB74D;
+  --background-color: #1c1c1c;
+  --text-color: #f0f0f0;
+  --accent-color: #E6E6E6;
   --font-family: 'Inter', sans-serif;
 }
 
@@ -27,7 +27,6 @@ html, body {
 }
 
 /* Typographie globale */
-/* Titres */
 h1, h2, h3, h4, h5 {
   color: var(--primary-color);
   margin-bottom: 20px;
@@ -49,7 +48,6 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* Liens */
 a {
   color: var(--primary-color);
   text-decoration: none;
