@@ -14,7 +14,7 @@
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--secondary-color);
-    animation: slideInLeft 1.5s ease-in-out;
+    animation: slideInLeft 1s ease-in-out;
 }
 
 @keyframes slideInLeft {
@@ -49,10 +49,32 @@
     display: inline;
 }
 
-/* Responsive for small screens */
+.nav-links .active a {
+    color: var(--secondary-color);
+    font-weight: bold;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
 @media (max-width: 768px) {
     .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--background-color);
+        width: 100%;
+        max-width: 300px;
+        height: 100vh;
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+        gap: 20px;
+        transform: translateX(100%);
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
     }
 }

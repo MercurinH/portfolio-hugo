@@ -8,7 +8,7 @@
 /* Alignement des sections */
 .section {
     padding: 60px 0;
-    text-align: center; /* Centre le contenu de chaque section */
+    text-align: center;
 }
 
 /* Espacement entre les titres et le contenu */
@@ -40,14 +40,14 @@ body {
 .grid {
     display: flex;
     justify-content: space-around;
-    gap: 20px; /* Espace entre les éléments */
-    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur petits écrans */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .grid-item {
     background-color: var(--background-color);
     padding: 20px;
-    width: calc(33.333% - 40px); /* Prend 1/3 de la largeur avec une marge */
+    width: calc(33.333% - 40px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -58,7 +58,6 @@ body {
     }
 }
 
-/* Marges spécifiques pour la mise en page */
 .margin-top {
     margin-top: 50px;
 }
@@ -77,19 +76,19 @@ body {
 
 @media (max-width: 768px) {
     .container {
-        width: 95%; /* Réduit la largeur du conteneur sur mobile */
+        width: 95%;
     }
 
     h1 {
-        font-size: 2rem; /* Ajuste la taille des titres pour les petits écrans */
+        font-size: 2rem;
     }
 
     .grid-item {
-        width: 100%; /* Les cartes s'empilent en colonne sur mobile */
+        width: 100%;
     }
 
     .button {
-        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+        width: 100%;
     }
 }
 
